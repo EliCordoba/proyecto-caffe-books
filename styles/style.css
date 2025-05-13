@@ -1,0 +1,148 @@
+/* Tipografía de Google Fonts para body */
+body {
+    font-size: xx-large;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(78, 203, 161);
+    color: rgb(151, 122, 83);
+}
+
+/* Tipografía local para títulos */
+h1, h2 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+}
+
+/* Layout con grid */
+.grid-container {
+    display: grid; 
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "nav header"
+        "nav main"
+        "nav footer";
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color:rgb(27, 191, 191);
+    padding: 20 px;
+    text-align: center ;
+    font-size: 1.5rem; 
+}
+header h1 {
+    margin: 0;
+}
+/* Navegación con flexbox */
+.nav {
+    grid-area: nav;
+    background-color:#a1887f; 
+    padding: 20px;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    background-color: rgb(162, 211, 62);
+    margin: 0;
+}
+
+.nav ul li {
+    margin-bottom: 0.5rem;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: rgb(204, 98, 23);
+    transition: color 0.15s ease, background-color 0.15s ease, text-shadow 0.15s ease; /* Agrega la transición */
+    font-weight: bold;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important; /* Agrega sombreado de texto inicial */
+}
+
+.nav ul li a:hover {
+    color: rgb(209, 179, 71); /* Cambia el color al pasar el mouse */
+    background-color: rgba(225, 14, 78, 0.2); /* Agrega un fondo al pasar el mouse */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7) !important;
+}
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Contenido principal */
+.main {
+    grid-area: main;
+    padding: 40px;
+    background-color: rgb(148, 221, 184);
+}
+
+.main h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+}
+
+.main h4 {
+    font-size: 5.5rem; 
+    margin-bottom: 10px;
+}
+form {
+    background-color: #b3910a96;
+    padding: 15px;
+    border: 1px solid #977f7f;
+    max-width: 400px;
+    margin-top: 15px;
+}
+input, textarea, button {
+    width: 90%;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+button {
+    background-color: #357725e6;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #85e780;
+}
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color:  #83cd7a;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.0rem; 
+}
+
+/* Vista mobile con media query */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav ul li {
+        margin: 0;
+    }
+}
+
