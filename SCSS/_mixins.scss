@@ -1,0 +1,12 @@
+@mixin transition($props...) {
+    transition: $props 0.3s ease-in-out;
+}
+
+@mixin fade-in($duration: 1s) {
+    animation: fadeIn $duration ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

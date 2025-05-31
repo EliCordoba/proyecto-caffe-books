@@ -1,0 +1,17 @@
+.button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    @include transition(all);
+}
+
+.primary-button {
+    @extend .button;
+    background-color: $color-btn-bg;
+    color: rgb(172, 212, 137);
+
+    &:hover {
+    background-color: $color-btn-hover-bg;
+}
+}
